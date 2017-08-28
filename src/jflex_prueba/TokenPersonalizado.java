@@ -5,6 +5,8 @@
  */
 package jflex_prueba;
 
+import java.util.Arrays;
+
 /**
  *
  * @author Eric
@@ -20,10 +22,13 @@ public class TokenPersonalizado {
   public String getToken(){
     return this._token;
   }
- 
+  
   TokenPersonalizado (String lexema, String token){
     this._lexema = lexema;
-    this._token = token;
+    String[] palabras_claves = {"if","else","do","for"};
+    if (token == "ID" && Arrays.asList(palabras_claves).contains(lexema)){
+        this._token = "Palabra_Clave";
+    }
   }
  
   public String toString(){
