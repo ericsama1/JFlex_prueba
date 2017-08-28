@@ -1,0 +1,9 @@
+var1
+10 + 1
+nombre
+apellido
+sad1
+prueba12dsa
+11.112321312312
+-1212.2
+for 
