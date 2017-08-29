@@ -29,6 +29,9 @@ public class TokenPersonalizado {
     if (token == "ID" && Arrays.asList(palabras_claves).contains(lexema)){
         this._token = "Palabra_Clave";
     }
+    else{
+        this._token = token;
+    }
   }
  
   public String toString(){
