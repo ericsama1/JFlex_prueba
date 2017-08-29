@@ -26,6 +26,7 @@ public class TokenPersonalizado {
   TokenPersonalizado (String lexema, String token){
     this._lexema = lexema;
     String[] palabras_claves = {"if","else","do","for"};
+    //pregunto si el string q leo es una palabra clave
     if (token == "ID" && Arrays.asList(palabras_claves).contains(lexema)){
         this._token = "Palabra_Clave";
     }

@@ -35,12 +35,9 @@ import static jflex_prueba.TokenPersonalizado.*;
  Digito = [0-9]
  Numero = {Digito} {Digito}*
  Letra = [A-Za-z]
- Palabra = {Letra} {Letra}*
  Simbolo = "*"|"+"|"-"|"/"|"#"
  Espacio = " "
  SaltoDeLinea = \n|\r|\r\n
- Palabra_Reservada =  "if"|"for"|"while"|"do"
- Reservada = {Palabra_Reservada}
  //aca comento las variables
  LoD = {Letra}|{Digito}
  ID = {Letra}{LoD}* 
@@ -60,12 +57,6 @@ import static jflex_prueba.TokenPersonalizado.*;
  this._existenTokens = true;
  return t;
 }
-
-{Reservada} {
- TokenPersonalizado t = new TokenPersonalizado(yytext(), "Reservada");
- this._existenTokens = true;
- return t;
-}
  
 {Entero} {
  TokenPersonalizado t = new TokenPersonalizado(yytext(), "Entero");
@@ -78,14 +69,9 @@ import static jflex_prueba.TokenPersonalizado.*;
  this._existenTokens = true;
  return t;
 }
+
 {Numero} {
  TokenPersonalizado t = new TokenPersonalizado(yytext(), "NUMERO");
- this._existenTokens = true;
- return t;
-}
- 
-{Palabra} {
- TokenPersonalizado t = new TokenPersonalizado(yytext(), "PALABRA");
  this._existenTokens = true;
  return t;
 }
